@@ -1,0 +1,15 @@
+name: FishingFi
+main: net.sakuragame.eternal.fishingfi.Main
+version: ${project.version}
+author: 'justwei'
+api-version: '1.13'
+depend:
+  - MegumiLib
+  - JustFishing
+  - JustMessage
+
+commands:
+  ffi:
+    aliases:
+      - fish
+    description: show all command
