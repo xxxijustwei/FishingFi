@@ -8,12 +8,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
-import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.gas.DefaultGasProvider;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -28,6 +26,7 @@ public class Main extends JavaPlugin {
 
     private final static String minterPrivateKey = "0xe57432df862d2c4708c1ff2d1ae3079725b409c419d6a9f4f2d40ed361923b68";
     private final static String publicAddress = "0xDCa72B2392FA69b1ea984a423975b1036cae94d8";
+    public final static String contractAddress = "0xCc624b18F5A25e348Ed58E9f121597B4D5BEA901";
 
     @Override
     public void onEnable() {
@@ -53,7 +52,7 @@ public class Main extends JavaPlugin {
 
     private void initContract() {
         contract = FishingToken.load(
-                "0xCc624b18F5A25e348Ed58E9f121597B4D5BEA901",
+                contractAddress,
                 web3j,
                 Credentials.create(minterPrivateKey),
                 new DefaultGasProvider()
